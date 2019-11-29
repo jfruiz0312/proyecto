@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Estado Salud</title>
+    </h:head>
+    <h:body>
+        <h:form id="formEstadoSalud">
+
+            <p:separator/>Estado de Salud<p:separator/>
+            <p:panelGrid columns="2" >
+
+                <p:panelGrid columns="2" >
+                    <h:outputLabel value="Su estado de salud es: " for="cmbEstadoSalud" />
+                    <p:selectOneMenu id="cmbEstadoSalud" value="" style="width:225px" required="true">
+                        <f:selectItem itemLabel="Seleccione por favor" itemValue="" />
+                        <f:selectItem itemLabel="Buena" itemValue="Buena" />
+                        <f:selectItem itemLabel="Mala" itemValue="Mala" />
+                    </p:selectOneMenu>  
+
+                    <h:outputLabel value="¿ Ha estado bajo tratamiento médico alguna vez?" for="cmbTratamiento" />
+                    <p:selectOneMenu id="cmbTratamiento" value="" style="width:225px" required="true">
+                        <f:selectItem itemLabel="Seleccione  por favor" itemValue="" />
+                        <f:selectItem itemLabel="Si" itemValue="Si" />
+                        <f:selectItem itemLabel="No" itemValue="No" />
+                    </p:selectOneMenu>  
+
+                    <h:outputLabel value="Cuanto Tiempo :" for="txtTiempo" />
+                    <p:inputText id="txtTiempo" value="" required="true" />
+
+
+                    <h:outputLabel value="¿ Actualmente se encuentra bajo tratamiento médico?" for="cmbTratamientoMe" />
+                    <p:selectOneMenu id="cmbTratamientoMe" value="" style="width:225px" required="true">
+                        <f:selectItem itemLabel="Seleccione  por favor" itemValue="" />
+                        <f:selectItem itemLabel="Si" itemValue="Si" />
+                        <f:selectItem itemLabel="No" itemValue="No" />
+                    </p:selectOneMenu>  
+
+
+                    <h:outputLabel value="Espesifique: " for="txtTratamientoMe" />
+                    <p:inputText id="txtTratamientoMe" value="" required="true" />
+
+
+                    <h:outputLabel value="¿Ha sido atendido por deórdenes psicológicos o conductuales?" for="cmbTratamientoPsi" />
+                    <p:selectOneMenu id="cmbTratamientoPsi" value="" style="width:225px" required="true">
+                        <f:selectItem itemLabel="Seleccione  por favor" itemValue="" />
+                        <f:selectItem itemLabel="Si" itemValue="Si" />
+                        <f:selectItem itemLabel="No" itemValue="No" />
+                    </p:selectOneMenu>  
+
+                    <h:outputLabel value="Espesifique: " for="txtTratamientoPsi" />
+                    <p:inputText id="txtTratamientoPsi" value="" required="true" />
+
+
+
+                    <h:outputLabel value="¿Posee algún tipo de discapacidad?" for="cmbTipoDiscapacidad" />
+                    <p:selectOneMenu id="cmbTipoDiscapacidad" value="" style="width:225px" required="true">
+                        <f:selectItem itemLabel="Seleccione  por favor" itemValue="" />
+                        <f:selectItem itemLabel="Si" itemValue="Si" />
+                        <f:selectItem itemLabel="No" itemValue="No" />
+                    </p:selectOneMenu>  
+
+                    <h:outputLabel value="Espesifique: " for="txtTipoDiscapacidad" />
+                    <p:inputText id="txtTipoDiscapacidad" value="" required="true" />
+
+                </p:panelGrid>
+            </p:panelGrid>
+            <p:separator/>
+            <p:commandButton value="Guardar" icon="ui-icon-disk"/><p:commandButton value="Cancelar" icon="ui-icon-closethick"/>
+            <p:separator/>
+        </h:form>
+    </h:body>
+</html>
+

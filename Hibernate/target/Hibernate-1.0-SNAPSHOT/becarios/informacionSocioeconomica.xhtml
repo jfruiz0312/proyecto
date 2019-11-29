@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Informacion Socioeconomica</title>
+    </h:head>
+    <h:body>
+        <h:form id="formInformacionSocioeconomica">
+
+            <p:separator/>Información Socioeconómica<p:separator/>
+            <p:panelGrid columns="2" >
+
+                <p:panelGrid columns="2" >
+                    <h:outputLabel value="N° de personas que componen su grupo familiar:" for="txtNfamiliar"/>
+                    <p:inputText id="txtNfamiliar" value=""/>
+
+                    <h:outputLabel value="¿Cuantos miembros del grupo familiar trabajan?" for="txtMiembroTra"/>
+                    <p:inputText id="txtMiembroTra" value=""/>
+
+
+                    <h:outputLabel value="Espesifique en que sector: " for="cmbSector" />
+                    <p:selectOneMenu id="cmbSector" value="" style="width:225px" required="true">
+                        <f:selectItem itemLabel="Seleccione por favor" itemValue="" />
+                        <f:selectItem itemLabel="Formal" itemValue="Formal" />
+                        <f:selectItem itemLabel="Informal" itemValue="Informal" />
+                    </p:selectOneMenu>  
+
+
+                    <h:outputLabel value="¿A cuánto asciende el ingreso mensual del grupo familiar?" for="txtIngresoMFamiliar"/>
+                    <p:inputText id="txtIngresoMFamiliar" value="" placeholder="$"/>
+                    
+                    
+                    <h:outputLabel value="¿Aproximadamente a cuánto asciende mensualmente los gastos de vida de
+                                   su grupo familiar?" for="txtIngresoFamiliar"/>
+                    <p:inputText id="txtIngresoFamiliar" value="" placeholder="$"/>
+
+                    <h:outputLabel value="¿Posee algún tipo de discapacidad?" for="cmbTipoDiscapacidad" />
+                    <p:selectOneMenu id="cmbTipoDiscapacidad" value="" style="width:225px" required="true">
+                        <f:selectItem itemLabel="Seleccione  por favor" itemValue="" />
+                        <f:selectItem itemLabel="Si" itemValue="Si" />
+                        <f:selectItem itemLabel="No" itemValue="No" />
+                    </p:selectOneMenu> 
+                    
+                    
+                    <h:outputLabel value="¿Posee su grupo familiar otros ingresos económicos?" for="cmbOtroIngreso" />
+                    <p:selectOneMenu id="cmbOtroIngreso" value="" style="width:225px" required="true">
+                        <f:selectItem itemLabel="Seleccione  por favor" itemValue="" />
+                        <f:selectItem itemLabel="Si" itemValue="Si" />
+                        <f:selectItem itemLabel="No" itemValue="No" />
+                    </p:selectOneMenu> 
+
+                    <h:outputLabel value="¿Espesifique concepto de estos ingresos y a cuanto haciende mensualmente
+                                   " for="txtIngresoAciendeM"/>
+                    <p:inputText id="txtIngresoAciendeM" value="" placeholder="$"/>
+
+                    
+                    <h:outputLabel value="¿Usted trabaja?" for="cmbTrabaja" />
+                    <p:selectOneMenu id="cmbTrabaja" value="" style="width:225px" required="true">
+                        <f:selectItem itemLabel="Seleccione  por favor" itemValue="" />
+                        <f:selectItem itemLabel="Si" itemValue="Si" />
+                        <f:selectItem itemLabel="No" itemValue="No" />
+                    </p:selectOneMenu> 
+                    
+                    
+                    <h:outputLabel value="¿Cual es su ingreso mensual?" for="txtIngresoMensual" />
+                    <p:inputText id="txtIngresoMensual" value="" placeholder="$"/>
+                    
+                     
+                     <h:outputLabel value="¿A cuánto ascienden sus gastos?" for="txtGastosoMensual"/>
+                    <p:inputText id="txtGastosoMensual" value="" placeholder="$"/>
+
+
+                </p:panelGrid>
+            </p:panelGrid>
+            <p:separator/>
+            <p:commandButton value="Guardar" icon="ui-icon-disk"/><p:commandButton value="Cancelar" icon="ui-icon-closethick"/>
+            <p:separator/>
+        </h:form>
+    </h:body>
+</html>
+

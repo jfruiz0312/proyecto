@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Agregar Convocatoria</title>
+    </h:head>
+    <h:body>
+        <h:form >
+            <p:panel header="Convocatoria">
+                <p:messages />
+                <h:panelGrid columns="2" columnClasses="label, value">
+
+                    <h:outputText value="Código de Convocatoria: *" />
+                    <p:inputText value="" required="true" maxlength="30" requiredMessage="El codigo convocatoria es obligatorio"/>
+
+                    <h:outputText value="Nombre de Convocatoria: *" />
+                    <p:inputText value="" required="true" maxlength="50" requiredMessage="El Nombre convocatoria es obligatorio"/>
+
+                    <h:outputText value="Seleccione un Subprograma: *" />
+                    <p:selectOneMenu id="subprograma" value="" style="width:225px">
+                        <f:selectItem itemLabel="Seleccione un subprograma " itemValue="" />
+                        <f:selectItem itemLabel="subprograma uno" itemValue="subprograma uno" />
+
+                    </p:selectOneMenu>
+
+                    <h:outputText value="Monto de Convocatoria*: " />
+                    <p:inputText value="" />
+
+                    <h:outputText value="Año*: " />
+                    <p:inputText value="" />
+                </h:panelGrid>
+
+                <p:separator/>Porcentaje de los criterios de evaluacion<p:separator/>
+
+                <h:panelGrid columns="2" columnClasses="label, value">
+
+                    <h:outputText value="PAES: *" />
+                    <p:inputText value="" required="true" maxlength="30" requiredMessage="El Porcentaje de PAES es obligatorio"/>
+
+                    <h:outputText value="CUM: *" />
+                    <p:inputText value="" required="true" maxlength="30" requiredMessage="El Porcentaje CUM  es obligatorio"/>
+
+                    <h:outputText value="Pruéba académica: *" />
+                    <p:inputText value="" required="true" maxlength="30" requiredMessage="El Pruéba academica es obligatorio"/>
+
+
+                    <h:outputText value="Estudio Socioeconómico: *" />
+                    <p:inputText value="" required="true" maxlength="30" requiredMessage="El Estudio Socioeconómico es obligatorio"/>
+
+                    <h:outputText value="Código de Convocatoria: *" />
+                    <p:inputText value="" required="true" maxlength="30" requiredMessage="El codigo convocatoria es obligatorio"/>
+
+                    <h:outputText value="Entrvista, Ensayo y prueba psicológicas de personalidad:" />
+                    <p:inputText value="" required="true" maxlength="30" requiredMessage="El codigo convocatoria es obligatorio"/>
+
+                </h:panelGrid>
+                <p:separator/>Asignaciones Maximas<p:separator />
+                <p:commandButton value="Agregar Asiganción" icon="pi pi-home" onclick="PF('dlgAsignacionMaxima').show();">
+
+                </p:commandButton>
+
+                <p:dialog header="Asignaciones Máximas" widgetVar="dlgAsignacionMaxima" showEffect="explode" hideEffect="bounce" height="250">
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:outputText value="Nivel:" />
+                        <p:selectOneMenu id="nivel" value="" style="width:200px">
+                            <f:selectItem itemLabel="Seleccione un Nivel " itemValue="" />
+                            <f:selectItem itemLabel="Grado" itemValue="grado" />
+                            <f:selectItem itemLabel="PostGrado" itemValue="PostGrado" />
+
+                        </p:selectOneMenu>
+                        <h:outputText value="Seleccione un Ambito:" />
+                        <p:selectOneMenu id="ambito" value="" style="width:200px">
+                            <f:selectItem itemLabel="Seleccione un Ambito " itemValue="" />
+                            <f:selectItem itemLabel="Exterior" itemValue="Exterior" />
+                            <f:selectItem itemLabel="Nacional" itemValue="Nacional" />
+
+                        </p:selectOneMenu>
+
+                        <h:outputText value="Monto máximo por año:"/>
+                        <p:inputText />
+
+                        <h:outputText value="Monto total por beca:"/>
+                        <p:inputText />
+
+
+                        <p:commandButton icon="ui-icon-disk" value="Guardar" >
+                            <p:confirm icon="fa fa-exclamation-triangle"/>
+                        </p:commandButton>
+                        <p:commandButton value="Cancelar" icon="ui-icon-circle-close" onclick="PF('dlgAsignacionMaxima').hide();"/>
+                    </h:panelGrid>
+
+
+                </p:dialog>
+                <h:panelGrid>
+                    <p:dataTable var="Asignacion" value="" rows="10"
+                                 paginator="true"     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                 rowsPerPageTemplate="5,10,15">
+                        >
+                        <p:column headerText="Nivel">
+                            <h:outputText value="" />
+                        </p:column>
+
+                        <p:column headerText="Ambito">
+                            <h:outputText value="" />
+                        </p:column>
+
+                        <p:column headerText="Monto Max. Año">
+                            <h:outputText value="" />
+                        </p:column>
+
+                        <p:column headerText="Monto Total Beca">
+                            <h:outputText value="" />
+                        </p:column>
+
+                        <p:column headerText="Acciones">
+                            <p:commandButton value="Modificar" icon=" ui-icon-refresh "/>|
+                            <p:commandButton value="Eliminar" icon="ui-icon-trash"/>
+                        </p:column>
+
+
+                    </p:dataTable>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

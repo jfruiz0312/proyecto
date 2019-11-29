@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Datos Familiares</title>
+    </h:head>
+    <h:body>
+        <p:panel id="formDatosFamiliares" >
+
+            <p:commandButton value="Agregar Familiar" icon="pi pi-home" onclick="PF('dlgAgregarFamiliar').show();">
+
+            </p:commandButton><br></br>
+
+            <p:dataTable var="familiar" value="" rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15">
+
+                <p:column headerText="Nombre">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="Parentesco">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="Edad">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="Nivel Academico Cursado">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="Titulo obtenido">
+                    <h:outputText value="" />
+                </p:column>
+                <p:column headerText="Lugar de Trabajo y Cargo">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="Representante Legal">
+                    <h:outputText value="" />
+                </p:column>
+
+
+                <p:column headerText="Acciones">
+                    <p:commandButton value="Eliminar" icon="ui-icon-trash"/>|
+                    <p:commandButton  value="Modificar" icon="ui-icon-refresh"/>
+                </p:column>
+
+            </p:dataTable>
+
+            <p:dialog header="Datos Familiar" widgetVar="dlgAgregarFamiliar" showEffect="explode" 
+                      hideEffect="bounce" height="350">
+
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Nombre:" />
+                    <p:inputText value="" />
+
+                    <h:outputText value="Parentesco:"/>
+                    <p:inputText value=""/>
+
+                    <h:outputText value="Edad:"/>
+                    <p:inputText value=""/>
+
+                    <h:outputText value="Nivel académico Cursado"/>
+                    <p:inputText value=""/>
+
+                    <h:outputText value="Titulo Obtenido"/>
+                    <p:inputText value=""/>
+
+                    <h:outputText value="Lugar de trabajo y cargo"/>
+                    <p:inputText value=""/>
+                    <h:outputText value="Representante Legal: " />
+                    <p:inputSwitch value="#{selectBooleanView.value1}" />
+
+
+                    <p:commandButton icon="ui-icon-disk" value="Guardar" >
+                        <p:confirm icon="fa fa-exclamation-triangle"/>
+                    </p:commandButton>
+                    <p:commandButton value="Cancelar" icon="ui-icon-circle-close" onclick="PF('dlgAgregarFamiliar').hide()();"/>
+                </h:panelGrid>
+
+
+            </p:dialog>
+
+            <p:separator/>Menciones quiénes depende económicamente de usted<p:separator/>
+
+
+
+            <p:commandButton value="Agregar Dependiente" icon="pi pi-home" onclick="PF('dlgAgregarDependientes').show();">
+
+            </p:commandButton><br></br>
+
+            <p:dataTable var="dependiente" value="" rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15">
+
+                <p:column headerText="Nombre">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="Parentesco">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="Edad">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="Acciones">
+                    <p:commandButton value="Eliminar" icon="ui-icon-trash"/>|
+                    <p:commandButton  value="Modificar" icon="ui-icon-refresh"/>
+                </p:column>
+
+            </p:dataTable>
+
+
+            <p:dialog header="Agregar Depedientes" widgetVar="dlgAgregarDependientes" showEffect="explode"
+                      hideEffect="bounce" height="190">
+
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:outputText value="Nombre:" />
+                        <p:inputText value="" />
+
+                        <h:outputText value="Parentesco:"/>
+                        <p:inputText value=""/>
+
+                        <h:outputText value="Edad:"/>
+                        <p:inputText value=""/>
+
+                        <p:commandButton icon="ui-icon-disk" value="Guardar" >
+                            <p:confirm icon="fa fa-exclamation-triangle"/>
+                        </p:commandButton>
+                        <p:commandButton value="Cancelar" icon="ui-icon-circle-close" onclick="PF('dlgAgregarDependientes').hide()();"/>
+                    </h:panelGrid>
+
+                </h:panelGrid>
+
+
+            </p:dialog>
+        </p:panel>
+    </h:body>
+</html>
+
